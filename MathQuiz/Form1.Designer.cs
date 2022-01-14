@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.timeLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.plusLeftLabel = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.dividedLeftLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.sum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.product)).BeginInit();
@@ -124,6 +126,7 @@
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(120, 20);
             this.sum.TabIndex = 7;
+            this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // difference
             // 
@@ -131,6 +134,7 @@
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(120, 20);
             this.difference.TabIndex = 12;
+            this.difference.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label4
             // 
@@ -139,7 +143,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 50);
             this.label4.TabIndex = 11;
-            this.label4.Text = "+";
+            this.label4.Text = "-";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // minusRightLabel
@@ -178,6 +182,7 @@
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(120, 20);
             this.product.TabIndex = 17;
+            this.product.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label9
             // 
@@ -186,7 +191,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 50);
             this.label9.TabIndex = 16;
-            this.label9.Text = "+";
+            this.label9.Text = "*";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timesRightLabel
@@ -225,6 +230,7 @@
             this.quotient.Name = "quotient";
             this.quotient.Size = new System.Drawing.Size(120, 20);
             this.quotient.TabIndex = 22;
+            this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label13
             // 
@@ -233,7 +239,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 50);
             this.label13.TabIndex = 21;
-            this.label13.Text = "+";
+            this.label13.Text = "/";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dividedRightLabel
@@ -277,6 +283,11 @@
             this.startButton.Text = "Start the quiz";
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -342,6 +353,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label dividedLeftLabel;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
